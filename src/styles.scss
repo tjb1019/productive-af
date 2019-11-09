@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+@import "variables";
+@import "mixins";
+
+html {
+  font-size: 10px;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  line-height: 20px;
+  background: white;
+  color: var(--text-color-primary);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+span,
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg {
+  display: inline-block;
+}

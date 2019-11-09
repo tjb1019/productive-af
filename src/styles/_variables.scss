@@ -1,0 +1,31 @@
+:root {
+  // pallette
+  --color-brand: hsl(27, 90%, 61%);
+  --color-primary: hsl(0, 0%, 13%);
+  --color-secondary: hsl(0, 0%, 29%);
+  --color-tertiary: hsl(0, 0%, 45%);
+  --color-subtle: hsl(0, 0%, 97%);
+
+  // fonts
+  --font-family: 'Lato', sans-serif;
+  --font-size: 1.6rem;
+
+  // font-weight
+  --font-weight-bold: 700;
+  --font-weight: 400;
+  --font-weight-light: 300;
+
+  // backgrounds
+  --background-color-dark: var(--color-primary);
+  --background-color-medium: var(--color-tertiary);
+  --background-color-light: var(--color-subtle);
+
+  // text color
+  --text-color-primary: var(--color-primary);
+  --text-color-secondary: var(--color-secondary);
+  --text-color-tertiary: var(--color-tertiary);
+  --text-color-light: var(--color-subtle);
+
+  --box-shadow: 0 .4rem .6rem 0 hsla(0, 0%, 0%, 0.2);
+  --box-shadow-input: inset 0 .2rem .4rem 0 hsla(0, 0%, 0%, 0.08);
+}
