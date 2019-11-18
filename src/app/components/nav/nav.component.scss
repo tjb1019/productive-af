@@ -1,0 +1,39 @@
+@import 'mixins';
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding: 0 15px;
+  background: var(--background-color-dark);
+  box-shadow: var(--box-shadow);
+
+  &__menu {
+    @include svg-fill-white();
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__list {
+    &__item {
+      display: inline-flex;
+      padding: 0 10px;
+      font-size: 20px;
+      color: white;
+      text-transform: uppercase;
+      transition: .3s all;
+
+      &--active {
+        color: var(--text-color-brand);
+        font-weight: var(--font-weight-bold);
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

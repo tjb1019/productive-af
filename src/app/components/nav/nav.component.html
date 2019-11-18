@@ -1,0 +1,18 @@
+<nav class="nav">
+  <img
+    class="nav__menu"
+    src="assets/icons/menu.svg"
+    alt="menu icon"
+    (click)="this.showNavItems = !this.showNavItems"
+  >
+  <ul class="nav__list slide-in-right" *ngIf="this.showNavItems">
+    <li
+      class="nav__list__item"
+      [class.nav__list__item--active]="navItem === this.activeNavItem"
+      *ngFor="let navItem of this.navItems"
+      (click)="this.navigate(navItem)"
+    >
+      {{ navItem }}
+    </li>
+  </ul>
+</nav>
