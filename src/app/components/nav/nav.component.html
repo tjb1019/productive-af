@@ -1,8 +1,16 @@
 <nav class="nav">
   <img
-    class="nav__menu"
+    class="nav__menu fade-in"
     src="assets/icons/menu.svg"
     alt="menu icon"
+    *ngIf="!this.showNavItems"
+    (click)="this.showNavItems = !this.showNavItems"
+  >
+  <img
+    class="nav__menu rotate-in"
+    src="assets/icons/x.svg"
+    alt="menu icon"
+    *ngIf="this.showNavItems"
     (click)="this.showNavItems = !this.showNavItems"
   >
   <ul class="nav__list slide-in-right" *ngIf="this.showNavItems">

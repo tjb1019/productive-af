@@ -1,0 +1,42 @@
+.fieldset {
+  --underline-height: 3px;
+
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0 15px;
+  border: none;
+
+  &__checkbox {
+    padding: 0;
+    margin-right: 10px;
+  }
+
+  &__input {
+    flex: 1;
+    position: relative;
+    padding-bottom: var(--underline-height);
+    background: white;
+
+    input {
+      padding: 10px;
+      width: 100%;
+      border: none;
+      font-size: 20px;
+      font-family: var(--font-family);
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &__underline {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: var(--underline-height);
+      background: var(--color-brand);
+    }
+  }
+}
