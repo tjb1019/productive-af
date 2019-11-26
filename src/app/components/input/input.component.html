@@ -1,10 +1,15 @@
 <div class="fieldset slide-in-right">
-  <input
-    class="fieldset__checkbox"
-    type="checkbox"
-    name="check"
-    id="check"
-  >
+  <label class="fieldset__checkbox" for="check">
+    <input
+      class="fieldset__checkbox__input"
+      type="checkbox"
+      name="check"
+      id="check"
+      [(ngModel)]="testCheck"
+      (change)="print()"
+    >
+    <span></span>
+  </label>
   <span class="fieldset__input">
     <input
       type="text"
@@ -13,6 +18,6 @@
       (focus)="this.showUnderline = !this.showUnderline"
       (blur)="this.showUnderline = !this.showUnderline"
     >
-    <span class="fieldset__input__underline fade-in" *ngIf="this.showUnderline"></span>
+    <span class="fieldset__input__underline grow-right" *ngIf="this.showUnderline"></span>
   </span>
 </div>

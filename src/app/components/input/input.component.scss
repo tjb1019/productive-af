@@ -8,8 +8,35 @@
   border: none;
 
   &__checkbox {
+    display: flex;
+    align-items: center;
     padding: 0;
     margin-right: 10px;
+
+    &__input {
+      display: none;
+
+      &:checked + span:after {
+        content: '';
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        bottom: 5px;
+        left: 5px;
+        border-radius: 1px;
+        background: var(--color-brand);
+        animation: fade-in .4s;
+      }
+    }
+
+    span {
+      height: 30px;
+      width: 30px;
+      border: 3px solid var(--color-primary);
+      border-radius: 4px;
+      display: inline-block;
+      position: relative;
+    }
   }
 
   &__input {

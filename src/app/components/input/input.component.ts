@@ -7,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputComponent implements OnInit {
   showUnderline: boolean = false;
+  testCheck: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  print() {
+    console.log(this.testCheck);
   }
 
 }

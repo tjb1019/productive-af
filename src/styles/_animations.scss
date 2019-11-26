@@ -51,3 +51,15 @@
     opacity: 1;
   }
 }
+
+.grow-right {
+	animation: grow-right 0.2s linear both;
+}
+@keyframes grow-right {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
