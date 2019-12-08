@@ -4,8 +4,24 @@
   display: flex;
   align-items: center;
   margin: 0;
-  padding: 0 15px;
   border: none;
+  background: white;
+  transition: .2s;
+
+  &--checked {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: var(--color-brand);
+      animation: grow-right 0.2s ease-in both;
+    }
+  }
 
   &__checkbox {
     display: flex;
@@ -16,26 +32,36 @@
     &__input {
       display: none;
 
-      &:checked + span:after {
+      &:checked span:after {
         content: '';
         position: absolute;
-        top: 5px;
-        right: 5px;
-        bottom: 5px;
-        left: 5px;
-        border-radius: 1px;
+        height: 100%;
+        width: 100%;
+        border-radius: 100px;
         background: var(--color-brand);
-        animation: fade-in .4s;
+        animation: scale-in .2s;
       }
     }
 
-    span {
+    &__styled {
       height: 30px;
       width: 30px;
-      border: 3px solid var(--color-primary);
-      border-radius: 4px;
-      display: inline-block;
+      border: 2px solid var(--color-subtle);
+      border-radius: 100px;
+      display: inline-flex;
       position: relative;
+      margin-left: 10px;
+      transition: .2s;
+
+      &--checked {
+        border-color: white;
+      }
+
+      &__checkmark {
+        margin: auto;
+        height: 24px;
+        width: 24px;
+      }
     }
   }
 
@@ -43,7 +69,6 @@
     flex: 1;
     position: relative;
     padding-bottom: var(--underline-height);
-    background: white;
 
     input {
       padding: 10px;
@@ -54,6 +79,12 @@
 
       &:focus {
         outline: none;
+      }
+
+      &::placeholder {
+        color: var(--text-color-tertiary);
+        font-weight: var(--font-weight-light);
+        font-style: italic;
       }
     }
 

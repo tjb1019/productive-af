@@ -1,0 +1,21 @@
+.do {
+  &__new {
+
+  }
+
+  &__body {
+    margin: 50px 0;
+
+    &__title {
+      color: var(--text-color-tertiary);
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    &__list {
+      &__item {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

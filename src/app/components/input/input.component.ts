@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'af-input',
@@ -6,16 +6,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./input.component.scss']
 })
 export class InputComponent implements OnInit {
+  @Input() checkbox: boolean = false;
+  @Input() value: string = '';
+  @Input() autofocus: boolean = false;
+  @Input() placeholder: string = '';
+  @Output() inputChecked = new EventEmitter<boolean>();
+  @Output() submitValue = new EventEmitter<string>();
+  checked: boolean = false;
   showUnderline: boolean = false;
-  testCheck: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  print() {
-    console.log(this.testCheck);
+  listen(event: KeyboardEvent) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+      this.submitValue.emit(this.value);
+      this.value = '';
+    }
   }
 
 }

@@ -1,23 +1,38 @@
-<div class="fieldset slide-in-right">
-  <label class="fieldset__checkbox" for="check">
+<div class="fieldset slide-in-right" [class.fieldset--checked]="this.checked">
+  <!-- checkbox -->
+  <label
+    class="fieldset__checkbox"
+    [for]="this.value"
+    *ngIf="this.checkbox"
+  >
     <input
+      [id]="this.value"
       class="fieldset__checkbox__input"
       type="checkbox"
-      name="check"
-      id="check"
-      [(ngModel)]="testCheck"
-      (change)="print()"
+      [(ngModel)]="this.checked"
+      (change)="this.inputChecked.emit(this.checked)"
     >
-    <span></span>
+    <span class="fieldset__checkbox__styled" [class.fieldset__checkbox__styled--checked]="this.checked">
+      <img
+        class="fieldset__checkbox__styled__checkmark"
+        src="assets/icons/check.svg"
+        alt="check icon"
+        *ngIf="this.checked"
+      >
+    </span>
   </label>
-  <span class="fieldset__input">
+  <!-- text input -->
+  <span class="fieldset__input" (click)="this.checked = !this.checked">
     <input
       type="text"
-      name="text"
-      id="text"
-      (focus)="this.showUnderline = !this.showUnderline"
-      (blur)="this.showUnderline = !this.showUnderline"
+      [(ngModel)]="this.value"
+      [placeholder]="this.placeholder"
+      [autofocus]="this.autofocus"
+      [readonly]="this.checkbox"
+      (focus)="this.showUnderline = true"
+      (blur)="this.showUnderline = false"
+      (keyup)="this.listen($event)"
     >
-    <span class="fieldset__input__underline grow-right" *ngIf="this.showUnderline"></span>
+    <span class="fieldset__input__underline grow-right" *ngIf="this.showUnderline && !this.checkbox"></span>
   </span>
 </div>

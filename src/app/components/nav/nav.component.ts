@@ -17,7 +17,7 @@ export class NavComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    this.activeNavItem = this.navItems.find(navItem => window.location.pathname.includes(navItem));
+    this.activeNavItem = this.navItems.find(navItem => window.location.pathname.includes(navItem)) || this.navItems[0];
   }
 
   navigate(navItem: NavItem) {

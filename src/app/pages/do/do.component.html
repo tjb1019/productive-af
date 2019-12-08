@@ -1,4 +1,21 @@
 <main class="do">
-  <h1 class="page-title fade-in-top">Add a TODO...</h1>
-  <af-input></af-input>
+  <section class="do__new">
+    <h1 class="page-title fade-in-top">Add a TODO...</h1>
+    <af-input
+      [placeholder]="'walk the dog, buy cereal, etc.'"
+      [autofocus]="true"
+      (submitValue)="saveTodo($event)"
+    ></af-input>
+  </section>
+  <section class="do__body">
+    <h3 class="do__body__title">do these things!</h3>
+    <ul class="do__body__list">
+      <li
+        class="do__body__list__item"
+        *ngFor="let todo of todos"
+      >
+        <af-input [value]="todo" [checkbox]="true"></af-input>
+      </li>
+    </ul>
+  </section>
 </main>
