@@ -12,7 +12,7 @@ import { NAV_ITEMS } from './nav.constants';
 export class NavComponent implements OnInit {
   navItems: NavItem[] = NAV_ITEMS;
   activeNavItem: NavItem | undefined;
-  showNavItems: boolean = false;
+  showNavItems: boolean = true;
 
   constructor(private router: Router) { }
 

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 // routing
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +16,9 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { NavComponent } from './components/nav/nav.component';
 import { InputComponent } from './components/input/input.component';
 
+// services
+import { ApiService } from '@services/api.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,8 +32,11 @@ import { InputComponent } from './components/input/input.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    ApiService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

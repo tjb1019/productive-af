@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '@services/api.service';
 
 @Component({
   selector: 'af-do',
@@ -8,16 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class DoComponent implements OnInit {
   todos: string[] = [];
 
-  constructor() { }
+  constructor(private api: ApiService) { }
 
-  ngOnInit() {
-    this.todos = [
-      'go to work',
-      'learn something new',
-      'workout',
-      'walk the dogs',
-      'massage molly',
-    ];
+  async ngOnInit() {
+    this.todos = await this.api.getUsers();
   }
 
   saveTodo(todo: string) {
