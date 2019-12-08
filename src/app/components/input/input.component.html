@@ -29,10 +29,13 @@
       [placeholder]="this.placeholder"
       [autofocus]="this.autofocus"
       [readonly]="this.checkbox"
-      (focus)="this.showUnderline = true"
-      (blur)="this.showUnderline = false"
+      (focus)="this.showUnderline = !this.showUnderline"
+      (blur)="this.showUnderline = !this.showUnderline"
       (keyup)="this.listen($event)"
     >
-    <span class="fieldset__input__underline grow-right" *ngIf="this.showUnderline && !this.checkbox"></span>
+    <span
+      class="fieldset__input__underline grow-right"
+      *ngIf="this.showUnderline && !this.checkbox"
+    ></span>
   </span>
 </div>

@@ -4,7 +4,7 @@ import { Request } from 'express';
 @Controller('users')
 export class UsersController {
 
-  @Get()
+  @Get('test')
   createUser(@Req() req: Request) {
     return [
       'go to work',
