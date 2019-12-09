@@ -9,7 +9,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  async getUsers() {
-    return await this.http.get<string[]>(`${environment.apiUrl}/users`).toPromise();
+  async getTodos() {
+    return await this.http.get<string[]>(`${environment.apiUrl}/do`).toPromise();
   }
 }

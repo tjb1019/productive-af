@@ -22,20 +22,20 @@
     </span>
   </label>
   <!-- text input -->
-  <span class="fieldset__input" (click)="this.checked = !this.checked">
+  <span
+    class="fieldset__input"
+    [class.fieldset__input--active]="this.showUnderline && !this.checkbox"
+    (click)="this.checked = !this.checked"
+  >
     <input
       type="text"
       [(ngModel)]="this.value"
       [placeholder]="this.placeholder"
       [autofocus]="this.autofocus"
       [readonly]="this.checkbox"
-      (focus)="this.showUnderline = !this.showUnderline"
-      (blur)="this.showUnderline = !this.showUnderline"
+      (focus)="this.showUnderline = true"
+      (blur)="this.showUnderline = false"
       (keyup)="this.listen($event)"
     >
-    <span
-      class="fieldset__input__underline grow-right"
-      *ngIf="this.showUnderline && !this.checkbox"
-    ></span>
   </span>
 </div>

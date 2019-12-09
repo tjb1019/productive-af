@@ -4,7 +4,13 @@ import { Controller, Get } from '@nestjs/common';
 export class DoController {
 
   @Get()
-  getDo(): string {
-    return 'do';
+  getTodos(): string[] {
+    return [
+      'go to work',
+      'learn something new',
+      'workout',
+      'walk the dogs',
+      'massage molly',
+    ];
   }
 }

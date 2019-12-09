@@ -1,6 +1,4 @@
 .fieldset {
-  --underline-height: 3px;
-
   display: flex;
   align-items: center;
   margin: 0;
@@ -59,18 +57,21 @@
 
       &__checkmark {
         margin: auto;
-        height: 24px;
-        width: 24px;
+        height: 18px;
+        width: 18px;
       }
     }
   }
 
   &__input {
+    --underline-height: 3px;
+
     flex: 1;
     position: relative;
     padding-bottom: var(--underline-height);
 
     input {
+      position: relative;
       padding: 10px;
       width: 100%;
       border: none;
@@ -86,17 +87,18 @@
         font-weight: var(--font-weight-light);
         font-style: italic;
       }
-    }
 
-    &__underline {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      height: var(--underline-height);
-      background: var(--color-brand);
-      margin: auto;
-      width: 0;
+      &--active {
+        // input underline
+        &:after {
+          position: absolute;
+          right: 0;
+          bottom: -(var(--underline-height));
+          left: 0;
+          height: var(--underline-height);
+          background: var(--color-brand);
+        }
+      }
     }
   }
 }

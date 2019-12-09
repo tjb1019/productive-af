@@ -12,7 +12,7 @@ export class DoComponent implements OnInit {
   constructor(private api: ApiService) { }
 
   async ngOnInit() {
-    this.todos = await this.api.getUsers();
+    this.todos = await this.api.getTodos();
   }
 
   saveTodo(todo: string) {
